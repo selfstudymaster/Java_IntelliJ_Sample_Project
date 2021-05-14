@@ -53,26 +53,12 @@ import java.nio.charset.StandardCharsets;
 
 
 // 練習用
-import java.util.Date;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.*;
-import java.util.List;
-import java.time.format.DateTimeFormatter;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
 
-        DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-		LocalDate d = LocalDate.parse("2011/08/21", f);
-        System.out.println(d);
-
-        d = d.plusDays(10000);
-        System.out.println(d);
-
-        LocalDate now = LocalDate.now();
-        System.out.println(now);
 
     }
 
