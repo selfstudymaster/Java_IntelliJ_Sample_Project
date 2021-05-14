@@ -55,13 +55,25 @@ import java.nio.charset.StandardCharsets;
 // 練習用
 
 import java.util.*;
-
+// java.lang.Objectについて学ぶ
 public class Main {
     public static void main(String[] args) {
-
-
+        List<Hero> list = new ArrayList<>();
+        Hero h = new Hero();
+        list.add(h);
+        System.out.println(list.size()); //1
+        h = new Hero();
+        h.name = "ゆうあ";
+        System.out.println(h);//ゆうあの
+        System.out.println(list);//ダミーの
+        list.remove(h);// ダミーのほうが消える
+        System.out.println(h); //ゆうあの
+        System.out.println(list);//ダミーのほうが消えてlistが空になる
+        System.out.println(list.size());//0
+        list.add(h); //ゆうあのほうが入る
+        System.out.println(list);//ゆうあが入ってる
+        System.out.println(h);// ゆうあを指してる
     }
-
 }
 
 

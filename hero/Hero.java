@@ -69,4 +69,12 @@ public class Hero {
         this.hp = 100;
         this.name = "ダミー";
     }
+
+    public String toString() {
+        return this.name + "のHPは" + this.hp;
+    }
+
+    public boolean equals(Object o) {
+        return true;
+    }
 }
