@@ -2,7 +2,7 @@ package hero;
 import sword.Sword;
 import matango.Matango;
 
-public class Hero {
+public class Hero implements Cloneable{
     public int hp;
     public String name;
     public static int money;
@@ -34,6 +34,15 @@ public class Hero {
     }
 
     public Sword sword; // Swordクラス型のフィールドsword
+
+    public Sword getSword() {
+        return sword;
+    }
+
+    public void setSword(Sword sword) {
+        this.sword = sword;
+    }
+
 
     void bye() {
         System.out.println("勇者は別れを告げた");
@@ -70,6 +79,15 @@ public class Hero {
         this.name = "ダミー";
     }
 
+    public Hero clone() {
+        Hero result = new Hero();
+        result.name = this.name;
+        result.hp = this.hp;
+        result.sword = this.sword.clone();
+
+        return result;
+    }
+
     public String toString() {
         return this.name + "のHPは" + this.hp;
     }
@@ -77,4 +95,12 @@ public class Hero {
     public boolean equals(Object o) {
         return true;
     }
+
+    public int hashCode() {
+        int result = 37;
+        result = result * 31 + name.hashCode();
+        result = result * 31 + hp;
+        return result;
+    }
+
 }
